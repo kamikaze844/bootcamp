@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bereken je omslagpunt voor leaseauto of privéauto</title>
+    <link rel="stylesheet" href="Css/bootstrap.css">
+
+</head>
+<body>
+<div class="container">
+
+    <img src="img\bannerautobahntekst.jpg" alt="Bereken je omslagpunt voor leaseauto of privéauto" style="width:100%;">
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="2epagina.html">Waarom</a></li>
+                    <li><a href="muur.html">Kastje</a></li>
+                    <li><a href="kastje.html">Muur</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Bereken je omslagpunt voor leaseauto of privéauto</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"> Mooi, een glimmende auto van de baas. Maar wat kost je dat eigenlijk? En is het niet
+            goedkoper om
+            zelf een auto aan te schaffen?
+            <br/>Met deze tool bereken je wat de beste keus voor je is
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3> Welke gegevens heb je nodig?</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Kenteken privé auto</h3>
+            <form method="post"
+                  action="http://www.kassenaar.com/hcj/testform.asp"
+                  class="form-inline">
+                <div class="form-group">
+
+                    <label for="kenteken"></label> <input type="text"
+                                                          class="form-control"
+                                                          id="kenteken"
+                                                          name="kenteken"
+                                                          aria-describedby="helpBlock">
+                    <button type="submit" class="btn btn-primary">Bereken</button>
+                    <span id="helpBlock" class="help-block">Vul het kenteken van je privé-auto, we vullen dan de belangrijkste gegevens voor je in.</span>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- invoervelden -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Kosten privé-auto per maand</h3>
+            <div class="form-group">
+
+                <label for="tax">wegenbelasting per kwartaal:</label> <input type="text"
+                                                                             required
+                                                                             class="form-control"
+                                                                             id="tax"
+                                                                             name="tax"
+                                                                             value="120"
+                                                                             aria-describedby="helpBlock">
+            </div>
+            <div class="form-group">
+                <label for="insur"> verzekering: </label> <input type="text"
+                                                                 class="form-control"
+                                                                 id="insur"
+                                                                 value="50"
+                                                                 required
+                                                                 name="insur">
+            </div>
+            <div class="form-group">
+                <label for="pverg">parkeervergunning:</label> <input type="text"
+                                                                     required
+
+                                                                     id="pverg"
+                                                                     name="pverg"
+                                                                     value="18"
+                                                                     class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="mobverg">mobiliteitsvergoeding per maand:</label><input type="text"
+                                                                                    required
+                                                                                    id="mobverg"
+                                                                                    name="mobverg"
+                                                                                    value="0"
+                                                                                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="kmverg">vergoeding per kilometer:</label><input type="text"
+                                                                            required
+                                                                            id="kmverg"
+                                                                            name="kmverg"
+                                                                            value="0.29"
+                                                                            class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="afschr">afschrijving per jaar:</label><input type="text"
+                                                                         required
+                                                                         value="1000"
+                                                                         id="afschr"
+                                                                         name="afschr"
+                                                                         class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="maint">onderhoud per maand:</label><input type="text"
+                                                            required
+                                                            id="maint"
+                                                            name="maint"
+                                                            value="100"
+                                                            class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="kmpy">zakelijke kilometers per jaar</label><input type="text"
+                                                                              required
+                                                                              id="kmpy"
+                                                                              name="kmpy"
+                                                                              value="15000"
+                                                                              class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="prkmpy">prive kilometers per jaar</label><input type="text"
+                                                                            required
+                                                                            id="prkmpy"
+                                                                            name="prkmpy"
+                                                                            value="5000"
+                                                                            class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gasspr">brandstofsoort:</label>
+
+                <select id="gasspr" class="form-control">
+                    <option value="-0">Kies brandstofsoort</option>
+                    <option value="euro95">Benzine</option>
+                    <option value="dsl">Diesel</option>
+                    <option value="lpg">LPG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h5>Brandstofprijs: <span id="gasspr"></span></h5>
+            </div>
+            <div class="form-group">
+                <label for="mileage">verbruik 1/X:</label><input type="text"
+                                                                 required
+                                                                 id="mileage"
+                                                                 name="mileage"
+                                                                 value="15"
+                                                                 class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <button id="privebutton" class="btn btn-primary">Bereken</button>
+            <h2>Kosten per maand: <span id="resultprive"></span></h2>
+        </div>
+        <div class="col-md-6">
+            <h3> Kosten Lease-auto</h3>
+            <div class="form-group">
+                <label for="tax2">catalogusprijs:</label> <input type="text"
+                                                                 value="20000"
+                                                                 id="tax2"
+                                                                 name="tax2"
+                                                                 class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="belschijf">Inkomen</label>
+                <select id="belschijf" class="form-control">
+                    <option value="-1"></option>
+                    <option value="40.8">Minder dan €67.072</option>
+                    <option value="52">Meer dan €67.072</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="bijt">bijtellingspercentage:</label>
+                <select id="bijt" class="form-control">
+                    <option value="-1"></option>
+                    <option value="4">4% bijtelling</option>
+                    <option value="22">22% bijtelling</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="pvergl">parkeervergunning:</label> <input type="text"
+                                                                      value="18"
+                                                                      id="pvergl"
+                                                                      name="pvergl"
+                                                                      class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="extr">bijbetaling:</label><input type="text"
+                                                             value="0"
+                                                             id="extr"
+                                                             name="extr"
+                                                             class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gassprl">brandstofsoort:</label>
+                <select id="gassprl" class="form-control">
+                    <option value="-0">Kies brandstofsoort</option>
+                    <option value="euro95">Benzine</option>
+                    <option value="dsl">Diesel</option>
+                    <option value="lpg">LPG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h5>Brandstofprijs: <span id="gassprl"></span></h5>
+            </div>
+
+            <div class="form-group">
+                <label for="kmll">verbruik 1/X</label><input type="text"
+                                                             id="kmll"
+                                                             name="kmll"
+                                                             value="10"
+                                                             class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="frkm">aantal gratis kilometers per jaar:</label><input type="text"
+                                                                                   id="frkm"
+                                                                                   name="frkm"
+                                                                                   value="0"
+                                                                                   class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fcrstkm">aantal verwachtte privé kilometers:</label><input type="text"
+                                                                                       id="fcrstkm"
+                                                                                       value="5000"
+                                                                                       name="frcstkm"
+                                                                                       class="form-control">
+            </div>
+            <div class="form-group">
+                <button id="leasebutton" class="btn btn-primary">Bereken</button>
+                <h2>Kosten lease per maand: <span id="resultlease"></span></h2>
+                <h2>Maandelijks besparing privé-kilometers: <span id="besparinglease"></span></h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12"><a href="2epagina.html">Waarom doen we dit</a>
+        </div>
+        <div class="col-md-12">
+            <h3><a href="kastje.html">Kastje</a></h3>
+        </div>
+
+
+        <img src="img/17102034117_f18c5a1130_z.jpg" alt="foto van spaarpot op wielen" style="width:auto; class:zebra2">
+
+    </div>
+</div>
+<script src="bootstraptest2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
