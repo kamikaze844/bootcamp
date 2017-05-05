@@ -11,6 +11,132 @@ var brandstofprijzen = [
 ]
 
 
+
+
+//**************************************
+//vanuit opendata.js geplakt
+//*******************************************
+
+$(document).ready(function () {
+
+
+    // 1. Aanhaken van klik op de Zoek knop.
+    $('#btnSearch').on('click', zoekKenteken);
+
+
+    // 2. Functie om kenteken te gaan zoeken
+    function zoekKenteken() {
+
+
+        // 2a. Maak mijn variabelen om de AJAX-call te kunnen uitvoeren
+        var KentekenName = $('#txtRdwGewicht').val();
+        var rdwUrl = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=';
+
+
+        // 2b. Stel de jQuery  Ajax-call in.
+        $.ajax({
+            url: rdwUrl + KentekenName,
+            success: verwerkKenteken,
+            error: verwerkError
+        });
+
+
+        // 2c. Success handler voor de AJAX-call
+        function verwerkKenteken (kenteken) {
+
+            // TODO: verwerk de movies in de UI
+
+            console.log(kenteken); // HOERA we hebben een kenteken
+
+            $('#listKentekenResults').empty();
+            for (var i = 0; i < kenteken.length; i++) {
+                var newListItem = '<li class="list-group-item">';
+                newListItem +='Merk en type: '
+                newListItem += kenteken[i].handelsbenaming;
+                newListItem += '</li>';
+                $('#listKentekenResults').append(newListItem);
+
+                var newListItem = '<li class="list-group-item">';
+                newListItem +='Kleur: '
+                newListItem += kenteken[i].eerste_kleur;
+                newListItem += '</li>';
+                $('#listKentekenResults').append(newListItem)
+
+                var newListItem = '<li class="list-group-item">';
+                newListItem +='Gewicht: '
+                newListItem += kenteken[i].massa_ledig_voertuig;
+                newListItem += '</li>';
+                $('#listKentekenResults').append(newListItem)
+
+
+                var newListItem = '<li class="list-group-item">';
+                newListItem +='Carosserievorm:  '
+                newListItem += kenteken[i].inrichting;
+                newListItem += '</li>';
+                $('#listKentekenResults').append(newListItem)
+            }
+        }
+
+
+
+        // 2d. Error handler voor de AJAX-call
+        function verwerkError(xhr, errorText, errorStatus) {
+            alert('FOUT:! ' + errorText)
+        }
+
+
+
+        //3a kentekenurl voor brandstof
+
+        var KentekenName = $('#txtRdwGewicht').val();
+        var rdwUrl = 'https://opendata.rdw.nl/resource/8ys7-d773.json?kenteken=';
+
+
+        // 3b. Stel de jQuery  Ajax-call in.
+        $.ajax({
+            url: rdwUrl + KentekenName,
+            success: verwerkBrandstof,
+            error: verwerkError
+        });
+
+
+        // 2c. Success handler voor de AJAX-call
+        function verwerkBrandstof (brandstof) {
+
+            // TODO: verwerk de movies in de UI
+
+            console.log(brandstof); // HOERA we hebben movies
+            for (var i = 0; i < brandstof.length;
+                 $('#mileage').val(brandstof[i].brandstofverbruik_gecombineerd));
+
+
+
+
+        }
+
+
+
+
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*****************************************************************
+//********************************************************************
+
 // 1. Haal referentie op naar de knop, en sla deze op in een variabele
 var knop = document.getElementById('leasebutton');
 
@@ -96,7 +222,7 @@ function priveberekening() {
 
     var taxmnth = (parseFloat(tax) / 3);
     var gascostmnth = (parseFloat(kmpy) * ((parseFloat(gasspr) / parseFloat(mileage))) - (parseFloat(kmpy) * 0.19) - (((parseFloat(kmpy)*((parseFloat(kmverg)) - 0.19))*0.6) / 12).toFixed(2));
-;    var prgascostmnth = (parseFloat(prkmpy) * ((parseFloat(gasspr) / parseFloat(mileage)));
+    var prgascostmnth = (parseFloat(prkmpy) * ((parseFloat(gasspr) / parseFloat(mileage))));
 
     var result = parseFloat(taxmnth) + parseFloat(insur) + parseFloat(pverg) + parseFloat(mobverg) + parseFloat(kmverg) + (parseFloat(afschr) / 12) + parseFloat(maint) + parseFloat(prgascostmnth) + parseFloat(gascostmnth).toFixed(2);
 

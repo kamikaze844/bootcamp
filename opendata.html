@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RDW Data</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body>
+<!--User interface-->
+
+<div class="container">
+
+    <h1>Kentekengegevens</h1>
+
+    <input type="text" id="txtRdwGewicht" placeholder="Kenteken" class="input-lg">
+    <button id="btnSearch" class="btn btn-primary">Zoek kenteken</button>
+
+    <h2>Results:</h2>
+    <hr>
+    <ul class="list-group" id="listKentekenResults"></ul>
+</div>
+
+<div class="container">
+    <h2>Brandstof:</h2>
+
+    <hr>
+    <ul class="list-group" id="listBrandstofResults"></ul>
+
+<!--Scripts hieronder-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="opendata.js"></script>
+</body>
+</html>

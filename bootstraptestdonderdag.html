@@ -55,26 +55,33 @@
         </div>
     </div>
 
+
+
+<!-- kenteken ophalen-->
+
+
     <div class="row">
         <div class="col-md-4">
             <h3>Kenteken privé auto</h3>
-            <form method="post"
-                  action="http://www.kassenaar.com/hcj/testform.asp"
-                  class="form-inline">
-                <div class="form-group">
 
-                    <label for="kenteken"></label> <input type="text"
-                                                          class="form-control"
-                                                          id="kenteken"
-                                                          name="kenteken"
-                                                          aria-describedby="helpBlock">
-                    <button type="submit" class="btn btn-primary">Bereken</button>
+                <div class="row">
+
+                    <input type="text" id="txtRdwGewicht" placeholder="Kenteken" class="input-lg">
+                    <button id="btnSearch" class="btn btn-primary">Zoek kenteken</button>
+
                     <span id="helpBlock" class="help-block">Vul het kenteken van je privé-auto, we vullen dan de belangrijkste gegevens voor je in.</span>
 
                 </div>
-            </form>
+
         </div>
     </div>
+
+</div>
+
+
+
+    <!-- BLOK MET VERDERE BEREKENING-->
+
 
     <!-- invoervelden -->
 
@@ -167,14 +174,14 @@
                 </select>
             </div>
             <div class="form-group">
-                <h5>Brandstofprijs: <span id="gasspr"></span></h5>
+                <h5>Brandstofprijs: <span id="gasspr2"></span></h5>
             </div>
             <div class="form-group">
                 <label for="mileage">verbruik 1/X:</label><input type="text"
                                                                  required
                                                                  id="mileage"
                                                                  name="mileage"
-                                                                 value="15"
+                                                                 value=""
                                                                  class="form-control">
             </div>
             <div class="form-group">
@@ -279,8 +286,9 @@
 
     </div>
 </div>
-<script src="bootstraptest2.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="bootstraptest2.js"></script>
 </body>
 </html>
